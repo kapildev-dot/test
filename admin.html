@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saraswati Library - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Admin Panel</div>
+            <ul>
+                <li><a href="index.html">Back to Main Site</a></li>
+                <li><a href="#" class="logout" onclick="logoutAdmin()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Admin Panel Section -->
+    <section id="admin-panel" class="admin-panel active">
+        <h2>Admin Dashboard</h2>
+        <div id="adminContent">
+            <h3>Add News Update</h3>
+            <form id="newsForm">
+                <textarea name="news_content" placeholder="Enter news update" required aria-label="News Update"></textarea>
+                <button type="submit">Add News</button>
+            </form>
+            
+            <h3>News Updates</h3>
+            <table id="newsTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Content</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            
+            <h3>Registered Users</h3>
+            <p>Total Registered Users: <span id="totalUsers">0</span></p>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Registration Date</th>
+                        <th>Fee Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            
+            <h3>Fees Management</h3>
+            <form id="feeForm">
+                <div class="form-row">
+                    <select name="student_id" required>
+                        <option value="">Select Student</option>
+                    </select>
+                    <input type="number" name="amount" placeholder="Amount" required>
+                    <input type="date" name="payment_date" required>
+                    <button type="submit">Add Fee</button>
+                </div>
+            </form>
+            
+            <div class="fee-actions">
+                <button onclick="printFeeReport()">Print Fee Report</button>
+                <button onclick="exportFeeData()">Export Fee Data</button>
+            </div>
+            
+            <table id="feeTable">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Amount</th>
+                        <th>Payment Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            
+            <h3>Daily Attendance</h3>
+            <div class="attendance-controls">
+                <input type="date" id="attendanceDate" aria-label="Select Date">
+                <button onclick="loadAttendance()">Load Attendance</button>
+                <button onclick="markAllPresent()">Mark All Present</button>
+                <button onclick="saveAttendance()" class="save-btn">Save Attendance</button>
+            </div>
+            <div class="attendance-status">
+                <p>Viewing attendance for: <span id="currentDateDisplay"></span></p>
+            </div>
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Present</th>
+                        <th>Time In</th>
+                        <th>Time Out</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Saraswati Library. All rights reserved.</p>
+    </footer>
+
+    <!-- Add Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>

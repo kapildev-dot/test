@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saraswati Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#timetable">Timetable</a></li>
+            <li><a href="#rules">Rules</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#admin-login" id="adminLink">Admin Panel</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Saraswati Library</h1>
+        <p>A Great Place for Self Study Void of all Distraction | A Place where Success Lies...</p>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search resources or facilities..." aria-label="Search resources">
+            <button onclick="searchResources()">Search</button>
+        </div>
+    </section>
+
+    <!-- Admin Login Section -->
+    <section id="admin-login" class="admin-login" style="display: none;">
+        <h2>Admin Login</h2>
+        <div class="login-form" id="adminLoginForm">
+            <input type="password" id="adminPassword" placeholder="Enter Admin Password" required aria-label="Admin Password">
+            <p id="loginError" class="error" style="display: none;"></p>
+            <button onclick="loginAdmin()">Login</button>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <h2>Our Facilities</h2>
+        <ul>
+            <li>Locker Facilities</li>
+            <li>Daily Newspaper</li>
+            <li>CCTV Surveillance</li>
+            <li>RO Drinking Water</li>
+            <li>High Speed WiFi (5g)</li>
+            <li>Fully Air Conditioned Hall</li>
+            <li>Calm & Peaceful Environment</li>
+            <li>Separate Toilets for Boys & Girls</li>
+            <li>Comfortable Chairs for Long Time Reading</li>
+            <li>No Weekly Off</li>
+            <li>24 Hours Open</li>
+        </ul>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://via.placeholder.com/300x250?text=Library+Interior" alt="Library Interior"></div>
+            <div class="gallery-item"><img src="https://via.placeholder.com/300x250?text=Study+Area" alt="Study Area"></div>
+            <div class="gallery-item"><img src="https://via.placeholder.com/300x250?text=Students+Studying" alt="Students Studying"></div>
+        </div>
+    </section>
+
+    <!-- Timetable Section -->
+    <section id="timetable" class="timetable">
+        <h2>Library Timetable</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday - Sunday</td>
+                    <td>24 Hours</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="rules">
+        <h2>Library Rules</h2>
+        <ul>
+            <li>Maintain silence at all times.</li>
+            <li>Bring your own study material.</li>
+            <li>No food or drinks allowed inside.</li>
+            <li>Use lockers for personal belongings.</li>
+            <li>Respect the facilities and furniture.</li>
+        </ul>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>Testimonials</h2>
+        <p>"Saraswati Library has been a game-changer for my studies. The peaceful environment helps me focus!" - Ravi, Student</p>
+    </section>
+
+   <!-- Replace your current news section with this -->
+<section id="news" class="news">
+    <h2>News Updates</h2>
+    <div class="news-ticker-container">
+        <div class="news-ticker">
+            <ul id="newsList" class="news-ticker-content"></ul>
+        </div>
+    </div>
+</section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <h2>FAQ</h2>
+        <ul>
+            <li><strong>What are the library hours?</strong> Open 24 hours, all days.</li>
+            <li><strong>Do I need to bring my own books?</strong> Yes, students bring their own material.</li>
+            <li><strong>Is membership required?</strong> Contact us for details.</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section (Registration Form) -->
+    <section id="contact" class="contact">
+        <h2>Register</h2>
+        <p>Address: In Front of SBI Bank, Gayatri Market, Ambala Road, Saraswa, SRE</p>
+        <p>Contact: Rahul Burman | Phone: 9627633733, 8755466047</p>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+            <input type="text" name="phone" placeholder="Your Phone Number" required aria-label="Your Phone Number">
+            <input type="text" name="address" placeholder="Your Address" required aria-label="Your Address">
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Saraswati Library. All rights reserved.</p>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
