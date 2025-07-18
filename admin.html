@@ -3,32 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saraswati Library - Admin Panel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Admin Panel - Saraswati Library</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Admin Panel</div>
-            <ul>
-                <li><a href="index.html">Back to Main Site</a></li>
-                <li><a href="#" class="logout" onclick="logoutAdmin()">Logout</a></li>
-            </ul>
+            <div class="logo">Saraswati Library - Admin</div>
+            <a href="index.html">Back to Main Site</a>
+            <a href="#" class="logout" onclick="logoutAdmin()">Logout</a>
         </div>
     </nav>
 
-    <!-- Admin Panel Section -->
-    <section id="admin-panel" class="admin-panel active">
+    <section class="admin-panel">
         <h2>Admin Dashboard</h2>
-        <div id="adminContent">
+
+        <div class="admin-card">
             <h3>Add News Update</h3>
             <form id="newsForm">
-                <textarea name="news_content" placeholder="Enter news update" required aria-label="News Update"></textarea>
+                <textarea name="news_content" placeholder="Enter news update" required></textarea>
                 <button type="submit">Add News</button>
             </form>
-            
+        </div>
+
+        <div class="admin-card">
             <h3>News Updates</h3>
             <table id="newsTable">
                 <thead>
@@ -40,7 +38,9 @@
                 </thead>
                 <tbody></tbody>
             </table>
-            
+        </div>
+
+        <div class="admin-card">
             <h3>Registered Users</h3>
             <p>Total Registered Users: <span id="totalUsers">0</span></p>
             <table id="userTable">
@@ -57,24 +57,22 @@
                 </thead>
                 <tbody></tbody>
             </table>
-            
+        </div>
+
+        <div class="admin-card">
             <h3>Fees Management</h3>
             <form id="feeForm">
-                <div class="form-row">
-                    <select name="student_id" required>
-                        <option value="">Select Student</option>
-                    </select>
-                    <input type="number" name="amount" placeholder="Amount" required>
-                    <input type="date" name="payment_date" required>
-                    <button type="submit">Add Fee</button>
-                </div>
+                <select name="student_id" required>
+                    <option value="">Select Student</option>
+                </select>
+                <input type="number" name="amount" placeholder="Amount" required>
+                <input type="date" name="payment_date" required>
+                <button type="submit">Add Fee</button>
             </form>
-            
             <div class="fee-actions">
                 <button onclick="printFeeReport()">Print Fee Report</button>
                 <button onclick="exportFeeData()">Export Fee Data</button>
             </div>
-            
             <table id="feeTable">
                 <thead>
                     <tr>
@@ -86,16 +84,18 @@
                 </thead>
                 <tbody></tbody>
             </table>
-            
+        </div>
+
+        <div class="admin-card">
             <h3>Daily Attendance</h3>
             <div class="attendance-controls">
-                <input type="date" id="attendanceDate" aria-label="Select Date">
+                <input type="date" id="attendanceDate">
                 <button onclick="loadAttendance()">Load Attendance</button>
                 <button onclick="markAllPresent()">Mark All Present</button>
-                <button onclick="saveAttendance()" class="save-btn">Save Attendance</button>
+                <button class="save-btn" onclick="saveAttendance()">Save Attendance</button>
             </div>
             <div class="attendance-status">
-                <p>Viewing attendance for: <span id="currentDateDisplay"></span></p>
+                Viewing attendance for: <span id="currentDateDisplay"></span>
             </div>
             <table id="attendanceTable">
                 <thead>
@@ -111,12 +111,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>© 2025 Saraswati Library. All rights reserved.</p>
     </footer>
 
-    <!-- Add Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
